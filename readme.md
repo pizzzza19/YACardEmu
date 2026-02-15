@@ -48,10 +48,11 @@ Windows
 2. `git clone --recursive https://github.com/GXTX/YACardEmu`
 3. `cd` to the `YACardEmu` directory.
 4. Run these commands.
-    1. `mkdir build & cd build`
-    2. `cmake .. -G "Visual Studio 18 2026" -A x64 -DCMAKE_BUILD_TYPE=Release`
+    1. `cmake -B build -S . -DCMAKE_POLICY_VERSION_MINIMUM=3.5`
+        * Newer CMake version >3.5 would not work. Type this command to define legacy CMake.
+	3. `mkdir build & cd build`
+    4. `cmake .. -G "Visual Studio 18 2026" -A x64 -DCMAKE_BUILD_TYPE=Release`
         * VS2026 18.0 or later is required.
-        * Update CMake to the newer version 3.5 or later before build.
 5. `cmake --build . --config Release`
 6. All the required files will be in `build\Release`
 
