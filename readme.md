@@ -23,7 +23,7 @@ Windows
 
 **[Precompiled Windows binaries can be found here.](https://github.com/GXTX/YACardEmu/tags)**
 
-1. [Visual Studio 2022](https://visualstudio.microsoft.com/vs/)
+1. [Visual Studio 2026](https://visualstudio.microsoft.com/vs/)
     * C++ desktop development
     * Windows Universal CRT SDK
     * C++ CMake tools for Windows
@@ -54,13 +54,18 @@ Windows
 5. `cmake --build . --config Release`
 6. All the required files will be in `build\Release`
 
-Running
+Getting Started
 ---------
 
-You must have a USB to RS232 (or a physical serial port) connected to your machine. Configuration is made via both a `config.ini` file & via a web portal / API.
-To access the web portal point your browser to `http://YOURIPHERE:8080/`, this web page is where you'll choose your card and insert your card.
+Configuration is made via both a `config.ini` file & via a web portal / API.
+After YACardEmu.exe running, go to `http://YOURIPHERE:8080/` on your browser, this web page is where you'll choose your card and insert your card.
+You cannot choose or insert the virtual card but select via your virtual local network (browser).
+The card automatically ejected each game ended. You will inset the card every time except in-game continue chosen.
+You can directly print your own design card by editing xxxx.png.
 
 Editing `config.ini` to point to where you want your cards stored is required.
+If you choose the different directory outside YACardEmu.exe, another config.ini automatically generated in the card folders.
+These 2 config.ini should be located the right place.
 
 Ubuntu
 
@@ -72,14 +77,19 @@ cp ../config.ini.sample config.ini
 Windows
 
 ```
-cd Release
-YACardEmu.exe
+[config]
+apiport = 8080
+basepath = C:\Users\xxxx\xxxx\yacard\./
+serialpath = \\.\pipe\YACardEmu
+targetdevice = xxxx
+autoselectedcard = card1.bin
 ```
 
-Running On Hardware
+Running On The Real Card Reader
 ---------
 
-If you're wanting to run this on hardware there are some settings you'll need to be aware of.
+You must have a USB to RS232 (or a physical serial port) connected to your machine.
+If you're wanting to run this on the real hardware there are some settings you'll need to be aware of.
 
 SEGA Chihiro
 ```
