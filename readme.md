@@ -49,7 +49,7 @@ Windows
 3. `cd` to the `YACardEmu` directory.
 4. Run these commands.
     1. `mkdir build & cd build`
-    2. `cmake .. -G "Visual Studio 17 2022" -A x64 -DCMAKE_BUILD_TYPE=Release`
+    2. `cmake .. -G "Visual Studio 18 2026" -A x64 -DCMAKE_BUILD_TYPE=Release`
         * VS2022 17.0 or later is required.
 5. `cmake --build . --config Release`
 6. All the required files will be in `build\Release`
