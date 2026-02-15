@@ -50,7 +50,8 @@ Windows
 4. Run these commands.
     1. `mkdir build & cd build`
     2. `cmake .. -G "Visual Studio 18 2026" -A x64 -DCMAKE_BUILD_TYPE=Release`
-        * VS2022 17.0 or later is required.
+        * VS2026 18.0 or later is required.
+        * Update CMake to the newer version 3.5 or later before build.
 5. `cmake --build . --config Release`
 6. All the required files will be in `build\Release`
 
