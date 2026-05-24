@@ -167,7 +167,9 @@ void CardIo::Command_33_ReadData2()
 			break;
 	}
 
-	if (currentStep > 1) {
+	if (currentStep >= 1) {
+		// FIXME: Hack to stop us from replying multiple times with card data, likely an issue with 0x35 as well
+		status.SoftReset();
 		runningCommand = false;
 	}
 }
@@ -204,6 +206,8 @@ void CardIo::Command_35_GetData()
 void CardIo::Command_40_Cancel()
 {
 	status.SoftReset();
+	// Hardware sets this when receiving Cancel
+	status.s = S::ILLEGAL_COMMAND;
 	runningCommand = false;
 }
 
