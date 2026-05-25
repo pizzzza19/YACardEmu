@@ -47,12 +47,8 @@ Windows
 1. If you don't have CMake installed, open `___ Native Tools Command Prompt for VS 20##`.
 2. `git clone --recursive https://github.com/GXTX/YACardEmu`
 3. `cd` to the `YACardEmu` directory.
-4. Run these commands.
-    1. `cmake -B build -S . -DCMAKE_POLICY_VERSION_MINIMUM=3.5`
-        * Newer CMake version >3.5 would not work. Type this command to define legacy CMake.
-	3. `mkdir build & cd build`
-    4. `cmake .. -G "Visual Studio 18 2026" -A x64 -DCMAKE_BUILD_TYPE=Release`
-        * VS2026 18.0 or later is required.
+4. Run command with CMake option `cmake -B build -S . -DCMAKE_POLICY_VERSION_MINIMUM=3.5`
+   * Newer CMake version (>3.5) will not work but error. This command force to define legacy CMake.
 5. `cmake --build . --config Release`
 6. All the required files will be in `build\Release`
 
@@ -65,7 +61,9 @@ You cannot choose or insert the virtual card but select via your virtual local n
 The card automatically ejected each game ended. You will inset the card every time except in-game continue chosen.
 
 For CXBX-R (Sega Chihiro Emulator) and Flycast (Sega Naomi / Naomi2 Emulator), it is recommended to insert or eject card by in-game cofigurated key (gamepad button).
-User no longer need to toggle card on the browser. 
+User no longer need to toggle card on the browser.
+
+Wangan Midnight Maximum Tune 1/2 will generate "廃車カード / Discarded Vehicle Card" automatically after card reached the limits.
 
 Editing `config.ini` to point to where you want your cards stored is required.
 If you choose the different directory outside YACardEmu.exe, another config.ini automatically generated in the card folders.
