@@ -48,9 +48,10 @@ Windows
 2. `git clone --recursive https://github.com/GXTX/YACardEmu`
 3. `cd` to the `YACardEmu` directory.
 4. Run command with CMake option `cmake -B build -S . -DCMAKE_POLICY_VERSION_MINIMUM=3.5`
-   * Newer CMake version (>3.5) will not work but error. This command force to define legacy CMake.
-5. `cmake --build . --config Release`
-6. All the required files will be in `build\Release`
+*Newer CMake version (>3.5) will not work but error. This command force to define legacy CMake.
+6. `cd build`
+7. `cmake --build . --config Release`
+8. All the required files will be in `build\Release`
 
 Getting Started
 ---------
